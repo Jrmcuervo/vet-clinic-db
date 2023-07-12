@@ -3,10 +3,10 @@
 DROP TABLE IF EXISTS animals;
 
 CREATE TABLE animals (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(25),
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(35),
   date_of_birth DATE,
   escape_attempts INTEGER,
   neutered BOOLEAN,
-  weight_kg DECIMAL(10, 2)
+  weight_kg DECIMAL(5,2)
 );
