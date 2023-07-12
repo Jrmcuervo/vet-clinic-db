@@ -1,4 +1,4 @@
-# curriculum-databases-projects-template
+# Animals Database
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 # 📖 [Animals_Database] <a name="about-project"></a>
 
-**[Animal Database]** The aim of this project is to create a veterinary clinic's database system. The database consists of various tables that hold data regarding animals, their owners, clinic staff, and appointments. The objective is to develop a robust database structure that allows for effective management and organization of information associated with the clinic's activities and the well-being of its patients.
+**[Animals Database]** The aim of this project is to create a veterinary clinic's database system. The database consists of various tables that hold data regarding animals, their owners, clinic staff, and appointments. The objective is to develop a robust database structure that allows for effective management and organization of information associated with the clinic's activities and the well-being of its patients.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -144,6 +144,5 @@ I would like to thank all my colleagues who are always willing to contribute!
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
