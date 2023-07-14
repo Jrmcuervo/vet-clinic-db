@@ -121,33 +121,38 @@ GROUP BY animals.name
 ORDER BY num_visits DESC
 LIMIT 1;
 
-SELECT vets.name AS vet_name, visits.visit_date
-FROM visits
-JOIN vets ON visits.vet_id = vets.id
-JOIN animals ON visits.animal_id = animals.id
-JOIN owners ON animals.owner_id = owners.id
-WHERE owners.full_name = 'Maisy Smith'
-ORDER BY visits.visit_date ASC
+SELECT a.name AS animal_name, v.visit_date, vt.name AS vet_name 
+FROM animals AS a 
+JOIN visits AS v ON a.id = v.animal_id 
+JOIN vets AS vt ON v.vet_id = vt.id 
+WHERE vt.name = 'Maisy Smith' 
+ORDER BY v.visit_date ASC 
 LIMIT 1;
 
-SELECT animals.*, vets.*, visits.visit_date
-FROM visits
-JOIN animals ON visits.animal_id = animals.id
-JOIN vets ON visits.vet_id = vets.id
-ORDER BY visits.visit_date DESC
+SELECT a.name AS animal_name, v.visit_date, vt.name AS vet_name 
+FROM animals AS a  
+JOIN  visits AS v ON a.id = v.animal_id 
+JOIN vets AS vt ON v.vet_id=vt.id 
+ORDER BY v.visit_date DESC 
 LIMIT 1;
 
-SELECT COUNT(*) AS num_visits
-FROM visits
-LEFT JOIN specializations ON visits.vet_id = specializations.vet_id AND visits.animal_id = specializations.species_id
-WHERE specializations.vet_id IS NULL;
+SELECT COUNT(*) 
+FROM (
+  SELECT specializations.species_id AS vet_specialization, animals.species_id
+  FROM visits
+  JOIN specializations
+  ON visits.vet_id = specializations.vet_id
+  JOIN animals
+  ON visits.animal_id = animals.id
+) AS comparative
+WHERE vet_specialization <> species_id;
 
-SELECT species.name AS specialty_name, COUNT(*) AS num_visits
-FROM visits
-JOIN animals ON visits.animal_id = animals.id
-JOIN species ON animals.species_id = species.id
-JOIN owners ON animals.owner_id = owners.id
-WHERE owners.full_name = 'Maisy Smith'
-GROUP BY species.name
-ORDER BY num_visits DESC
+SELECT species.name AS species_name 
+FROM visits 
+JOIN animals ON visits.animal_id = animals.id 
+JOIN vets ON visits.vet_id = vets.id 
+JOIN species ON animals.species_id = species.id 
+WHERE vets.name = 'Maisy Smith' 
+GROUP BY species.name 
+ORDER BY COUNT(*) DESC 
 LIMIT 1;
