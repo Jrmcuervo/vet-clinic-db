@@ -120,7 +120,7 @@ Once you have runned the scripts on schema.sql and data.sql you can run the scri
 
 Contributions, issues, and feature requests are welcome!
 
- Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
